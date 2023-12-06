@@ -1,12 +1,6 @@
-# Casper
+# Website of Decouvre Bitcoin France 
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
-
-&nbsp;
-
-![screenshot-desktop](https://user-images.githubusercontent.com/1418797/183329195-8e8f2ee5-a473-4694-a813-a2575491209e.png)
-
-&nbsp;
+This site was built based on the Casper theme from Ghost, but it was customized to provide a minimalist design that represents the Decouvre Bitcoin and Plan B Network initiative.
 
 # First time using a Ghost theme?
 
