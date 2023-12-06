@@ -1,0 +1,94 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
+     
+    {{#if @custom.show_publication_cover}}
+    
+        <div class="homedb">   
+           
+           <div class="homedb-desc" >
+            <h1 class="">Découvre Bitcoin</h1> 
+            <div id="subtheme" >
+                <h3>Bienvenue dans le terrier du Bitcoin!</h3>
+                <p>Lance-toi en toute sécurité et à ton rythme dans cette nouvelle technologie.</p>
+                <p>Nous t’accompagnons tout au long de ton parcours avec de nombreuses ressources open-source.</p>
+                <a href="https://planb.network/" target="_blank"><button>Plan B Network</button></a>
+            </div>
+           </div>
+            
+        <img id="bitcoinrabbit" src="/assets/images/bitcoinrabbit.png" alt="">
+        </div>
+        
+    {{/if}}
+
+    {{#match @custom.header_style "!=" "Hidden"}}
+        <div class="site-header-inner inner">
+            {{#match @custom.navigation_layout "Logo on cover"}}
+                {{#if @site.logo}}
+                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{else}}
+                    <h1 class="site-title">{{@site.title}}</h1>
+                {{/if}}
+            {{/match}}
+            {{#if @site.description}}
+                <p class="site-description">{{@site.description}}</p>
+            {{/if}}
+        </div>
+    {{/match}}
+
+</div>
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+
+<div class="what-we-do-container">
+        <div class="what-we-do-text">
+            <h2>Ce Que Nous Faisons</h2>
+            <p>DécouvreBitcoin est un projet éducationnel Bitcoin. Notre mission est de fournir du contenu éducatif open-source afin de former les bitcoiners de demain et ainsi soutenir l’adoption de masse du protocole.</p>
+            <p>"DécouvreBitcoin" a lancé une plateforme éducative en ligne à l'échelle internationale appelée Plan B Network, où chacun peut acquérir des connaissances sur Bitcoin, du niveau débutant à avancé, de manière gratuite et souveraine. De plus, nous proposons des podcasts réalisés par des bénévoles bitcoiners que vous pouvez écouter de n'importe où. Bien que la virtualité offre de nombreuses opportunités, nous reconnaissons également l'importance du contact humain, et c'est là que les meetups interviennent, des rencontres entre bitcoiners de votre ville, que vous souhaitiez y participer ou en être l'organisateur.</p>
+            <p>Par ailleurs, nous disposons d'une boutique que tout bitcoiner appréciera, où vous pourrez trouver des vêtements bitcoiners, des affiches et du matériel de minage.</p>       
+        </div>
+        <div class="icon-container">
+            <div class="icon">
+                <a href="https://planb.network/">
+                <i class="fa-solid fa-user-graduate"></i>
+               <button >Plan B Network</button>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="/meetup">
+            <i class="fa-brands fa-meetup"></i>
+            <button>Meetups</button>
+            </a>
+            </div>            
+            <div class="icon">
+                <a href="/podcast">
+                <i class="fa-solid fa-podcast"></i>
+                <button>Podcast</button>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="https://shop.decouvrebitcoin.com/" target="_blank">
+                <i class="fa-solid fa-store"></i>
+                <button>Shop</button>
+                </a>
+            </div>
+        </div>
+    </div>    
+
+<div class="inner posts">
+ 
+    <div class="post-feed">
+        {{#foreach posts}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+           
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+
+</div>
+</main>
